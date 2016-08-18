@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<package>
+<package format="2">
   <name>fastfusion_node</name>
   <version>0.0.0</version>
   <description>Main node containing fastfustion from TUM</description>
@@ -9,23 +9,18 @@
   <buildtool_depend>catkin</buildtool_depend>
   <buildtool_depend>catkin_simple</buildtool_depend>
   
-  <build_depend>cmake_modules</build_depend>
-  <run_depend>cmake_modules</run_depend>
-  <build_depend>auxiliary</build_depend>
-  <run_depend>auxiliary</run_depend>
-  <build_depend>camerautils</build_depend>
-  <run_depend>camerautils</run_depend>
-  <build_depend>cv_bridge</build_depend>
-  <run_depend>cv_bridge</run_depend>
-  <build_depend>fusion</build_depend>
-  <run_depend>fusion</run_depend>
-  <build_depend>tf</build_depend>
-  <build_depend>tf_conversions</build_depend>
-  <build_depend>sensor_msgs</build_depend>
-  <build_depend>nav_msgs</build_depend>
-  <build_depend>std_msgs</build_depend>
-  <build_depend>image_transport</build_depend>
-  
-  <build_depend>tclap</build_depend>
-  <run_depend>tclap</run_depend>
+  <depend>cmake_modules</depend>
+  <depend>auxiliary</depend>
+  <depend>camerautils</depend>
+  <depend>cv_bridge</depend>
+  <depend>fusion</depend>
+  <depend>tf</depend>
+  <depend>tf_conversions</depend>
+  <depend>sensor_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>image_transport</depend>  
+  <depend>tclap</depend>
+  <depend>pcl_conversions</depend>
+  <depend>pcl_ros</depend>
 </package>
