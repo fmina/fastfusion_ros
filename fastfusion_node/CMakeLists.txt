@@ -16,6 +16,10 @@ if(UNIX AND NOT APPLE)
 endif()
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -msse4.2 -funroll-loops")
 
+IF(APPLE)
+  SET(EXECUTABLE_FLAG MACOSX_BUNDLE)
+ENDIF(APPLE)
+
 #################################################
 #	Find the necessary Pkgs 					#
 #################################################
