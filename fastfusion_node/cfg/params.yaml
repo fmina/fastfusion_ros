@@ -15,25 +15,25 @@ scale : 0.009
 distanceThreshold : 0.03
 
 # Mesh Saving (location + desired Name without ending)
-saveMesh : false
-fileLocation : /home/karrer/forPaper
+saveMesh : true
+fileLocation : /Users/fmina/catkin_ws/mydata
 
 # TF Id's
 use_vicon_pose : true
-world_id : /vicon
-tracker_id : /camera_imu
-cam_id : /realsense_frame
+world_id : /world
+tracker_id : firefly/vi_sensor/vi_sensor_link
+cam_id : /firefly/vi_sensor/camera_depth_optical_center_link
 
 # Use time-window based reconstruction
 # Set decay_time to value <= 0.0 to achieve full reconstruction,
 # otherwise the defined time window (decay_time) is used
-decay_time : 0.0
+decay_time : 3.0
 
 # Define if using Time of flight sensor or not
 use_pmd : false
 
 # Define if want to use Noise Data (only use with use_pmd = true)
-depth_noise: true
+depth_noise: false
 
 # Want to use pcl visualizer (e.g. when performing global reconstruction)
-use_pcl_visualizer : true
+use_pcl_visualizer : false
