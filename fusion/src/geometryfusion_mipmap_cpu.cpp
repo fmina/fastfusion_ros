@@ -1919,6 +1919,26 @@ int FusionMipMapCPU::addMap(const cv::Mat &depth, const cv::Mat &noiseImg, Camer
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+void FusionMipMapCPU::getDistance(float *Distance){
+	Distance = _distance;
+}
+
+double FusionMipMapCPU::getDistanceTest(float x, float y, float z){
+	std::cout << "brick length: " << this->_brickLength << std::endl;
+	std::cout << "brick size: " << this->_brickSize << std::endl;
+	std::cout << "offset: " << this->_offset.x << "  " << this->_offset.y << "  " << this->_offset.z << std::endl;
+	std::cout << "n_: " << this->_n << std::endl;
+	float max_distance = 0.0;
+	for(int i=0; i<_nLeavesTotal; i++){
+		if(_distance[i] > max_distance)
+			max_distance = _distance[i];
+	}
+//		std::cout <<"leaf " << i << "  pos: " << (int)_leafPos[i].x << " " << (int)_leafPos[i].y << " " <<  (int)_leafPos[i].z << std::endl;
+//		std::cout <<"leaf " << i << " scale " << (int)_leafScale[i] << std::endl;
+		std::cout << "max dis: " << max_distance << std::endl;
+
+}
+
 int FusionMipMapCPU::addMap(const cv::Mat &depth, CameraInfo caminfo, const cv::Mat &rgb,
 		float scaling, float maxcamdistance, double time, double decayTime)
 {
@@ -3209,7 +3229,7 @@ bool FusionMipMapCPU::updateMeshes()
 
 		_meshCellsCopy = _meshCells;
 		_leafParentCopy = _leafParent;
-		_threadMeshing = true;
+//		_threadMeshing = true;
 		if(_threadMeshing){
 			if(_meshThread){
 				_meshThread->join();

@@ -173,6 +173,10 @@ public:
 	void setDepthChecks(int depthchecks);
 	void setIncrementalMeshing(bool incrementalMeshing);
 
+	void getDistance(float *Distance);
+
+	double getDistanceTest(float x, float y, float z);
+
 	typedef struct MeshStatistic_ {unsigned int frameNumber; size_t queueSize; size_t arraySize; double timeUpdate; double timeSum;
 	MeshStatistic_(unsigned int frameNumber_p, size_t queueSize_p, size_t arraySize_p,  double timeUpdate_p, double timeSum_p)
 	:frameNumber(frameNumber_p), queueSize(queueSize_p), arraySize(arraySize_p), timeUpdate(timeUpdate_p),timeSum(timeSum_p){}} MeshStatistic;
