@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<launch>
+
+<!-- Use the algorithm together with a Bagfile, compute poses using OKVIS -->
+	<arg name="camera_name" value="/fireflt/vi_sensor/camera_depth"/>
+
+	<!-- Run fastfusion_node-->
+	<node  name="fastfusion_node" pkg="fastfusion_node" type="fastfusion_node" clear_params="true" output="screen" >
+		<!-- <remap from="image_depth"		to="$(arg camera_name)/depth/image_raw" /> -->
+		<!-- <remap from="image_conf"		to="$(arg camera_name)/confidence/image_raw" /> -->
+		<!-- <remap from="image_noise" 		to="$(arg camera_name)/noise/image_raw" /> -->
+		<remap from="point_cloud" 		to="/firefly/vi_sensor/camera_depth/depth/points" />
+
+		<!-- Load parameters -->
+ 		<rosparam file="$(find fastfusion_node)/cfg/params.yaml"/> 
+ 		<rosparam file="$(find fastfusion_node)/cfg/camchain_realsense.yaml"/>
+	</node>
+	
+</launch>
