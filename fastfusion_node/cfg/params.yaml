@@ -6,16 +6,16 @@
 
 
 # Desired Threading
-threadFusion : true
+threadFusion : false
 threadMeshing : true
 
 # Scales
 imageScale : 1000.0
-scale : 0.009
+scale : 0.012
 distanceThreshold : 0.03
 
 # Mesh Saving (location + desired Name without ending)
-saveMesh : true
+saveMesh : false
 fileLocation : /Users/fmina/catkin_ws/mydata
 
 # TF Id's
